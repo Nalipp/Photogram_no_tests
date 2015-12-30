@@ -1,1 +1,18 @@
-<%= image_tag @post.image.url(:medium) %>
+<div class="posts-wrapper row">
+  <div class="post">
+    <div class="post-head">
+      <div class="name">
+        Nate Lipp
+      </div>
+    </div>
+    <div class="image center-block">
+      <%= image_tag @post.image.url(:medium) %>
+    </div>
+    <div class="caption">
+      <h3><%= @post.caption %></h3>
+    </div>
+    <div class="text-center">
+      <h4><%= link_to "Cancel", posts_path %> : <%= link_to "Edit", edit_post_path(@post) %></h4>
+    </div>
+  </div>
+</div>

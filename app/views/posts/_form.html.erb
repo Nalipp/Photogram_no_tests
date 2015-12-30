@@ -1,7 +1,16 @@
-<div class="container">
-  <%= simple_form_for @post, url: posts_path do |f| %>
-    <%= f.input :image, as: :file %><br>
-    <%= f.input :caption %><br>
-    <%= f.button :submit %>
+<div class="text-center">
+  <%= image_tag @post.image.url(:medium) %>
+</div>
+<div class="form-wrapper">
+  <%= simple_form_for @post, html: { class: 'form-horizontal', multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.input :caption %>
+    </div>
+    <div class="form-group">
+      <%= f.input :image %>
+    </div>
+    <div class="form-group">
+      <%= f.button :submit, class: 'btn-success' %>
+    </div>
   <% end %>
 </div>
