@@ -1,3 +1,7 @@
-<%= simple_form_for @user, url: users_path do |form| %>
-  <%= form.input :image, as: :file %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @post, url: posts_path do |f| %>
+    <%= f.input :image, as: :file %><br>
+    <%= f.input :caption %><br>
+    <%= f.button :submit %>
+  <% end %>
+</div>
