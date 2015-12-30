@@ -1,1 +1,6 @@
-<h1>Photogram</h1>
+<h1>Photograms</h1>
+<% @post.each do |post| %>
+<%= image_tag post.image.url(:thumb) %>
+<%= image_tag post.image.url(:medium) %>
+<%= image_tag post.image.url(:large) %>
+<% end %>
