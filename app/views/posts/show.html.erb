@@ -2,7 +2,7 @@
   <div class="post">
     <div class="post-head">
       <div class="name">
-        Nate Lipp
+        <%= @post.user.id %>
       </div>
     </div>
     <div class="image center-block">
@@ -12,8 +12,11 @@
       <h3><%= @post.caption %></h3>
     </div>
     <div class="text-center">
-      <h4><%= link_to "Cancel", posts_path %> : <%= link_to "Edit", edit_post_path(@post) %> :
+      <h4><%= link_to "Cancel", posts_path %>
+        <% if current_user.id == @post.user.id %>
+          : <%= link_to "Edit", edit_post_path(@post) %> :
           <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %></h4>
+      <% end %>
     </div>
   </div>
 </div>
